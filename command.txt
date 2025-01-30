@@ -1,0 +1,5 @@
+command for compiling:
+	nasm -fbin <inputfile>.asm -o <outputfile>.bin
+
+execute the compiles binary file:
+	qemu-system-x86_64 --nographic <outputfile>.bin	
