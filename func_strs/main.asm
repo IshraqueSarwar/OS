@@ -2,34 +2,30 @@
 
 
 
-
-;prints the content in data label HELLO
-mov bx, HELLO
+mov bx, FIRST_LINE
 call print
 
-; newline print
 call print_nl
 
-;prints the content in data label GOODBYE
-mov bx, GOODBYE
 
+mov bx, SECOND_LINE
+call print
 
+call print_nl
 
 
 
 jmp $
 
+%include "func_def.asm"
 
-;include the files that contain the subroutines
-%include "f_print.asm"
-%include "f_print_hex.asm"
 
-HELLO:
-	db 'Hello, World', 0
+FIRST_LINE:
+	db "Hey sup? I thought you were better.", 0
 
-GOODBYE:
-	db 'Goodbye', 0
 
+SECOND_LINE:
+	db "But, you are the same as every other one it seems!", 0
 
 
 times 510-($-$$) db 0
